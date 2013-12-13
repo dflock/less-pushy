@@ -10,58 +10,27 @@
 *
 **/
 
-// Time saving LESS Mixins from https://github.com/dmitryf/elements/
-.transform(...) {
-    -webkit-transform: @arguments;
-    -moz-transform:    @arguments;
-    -o-transform:      @arguments;
-    -ms-transform:     @arguments;
-    transform:         @arguments;
-}
-.transition(@duration:0.2s, @ease:ease-out) {
-    -webkit-transition: all @duration @ease;
-    -moz-transition:    all @duration @ease;
-    -o-transition:      all @duration @ease;
-    transition:         all @duration @ease;
-}
-.box-shadow(...) {
-    -webkit-box-shadow: @arguments;
-    -moz-box-shadow:    @arguments;
-    box-shadow:         @arguments;
-}
+@import "mixins.less";
 
 /* Menu Appearance */
 
-@menu-width: 200px;
+@menu-closed-width: 10px;
+@menu-open-width: 200px;
 @z-index: 9999;
 @speed: .2s;
 
 .pushy {
     position: fixed;
-    width: @menu-width;
+    width: @menu-open-width;
     height: 100%;
     top: 0;
     z-index: @z-index;
-    background: #333332;
-    font-size: 0.9em;
-    font-weight: bold;
-    .box-shadow(inset -10px 0 6px -9px rgba(0, 0, 0, .7));
     overflow: auto;
     /* enables momentum scrolling in iOS overflow elements */
     -webkit-overflow-scrolling: touch;
 
     a {
         display: block;
-        color: #b3b3b1;
-        padding: 15px 30px;
-        border-bottom: 1px solid rgba(0, 0, 0, .1);
-        border-top: 1px solid rgba(255, 255, 255, .1);
-        text-decoration: none;
-
-        &:hover {
-            background: #00b4ff;
-            color: #fff;
-        }
     }
 }
 
@@ -69,7 +38,7 @@
 /* Menu Movement */
 
 .pushy-left {
-    .transform(translate3d(@menu-width*(-1px),0,0));
+    .transform(translate3d(@menu-open-width*(-1px),0,0));
 }
 
 .pushy-open {
@@ -77,7 +46,7 @@
 }
 
 .container-push, .push-push {
-    .transform(translate3d(@menu-width,0,0));
+    .transform(translate3d(@menu-open-width,0,0));
 }
 
 /* Menu Transitions */
@@ -94,14 +63,15 @@
 .site-overlay {
     display: none;
 }
-
+// While pushy is active, the site overlay is expanded to cover the main
+// part of the site.
 .pushy-active .site-overlay {
     display: block;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    left: @menu-width;
+    left: @menu-open-width;
     z-index: @z-index;
 }
 
