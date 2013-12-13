@@ -5,7 +5,7 @@
 
 /* Menu Appearance */
 
-.pushy{
+.pushy {
     position: fixed;
     width: 200px;
     height: 100%;
@@ -21,7 +21,7 @@
     -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
 }
 
-.pushy a{
+.pushy a {
     display: block;
     color: #b3b3b1;
     padding: 15px 30px;
@@ -30,14 +30,14 @@
     text-decoration: none;
 }
 
-.pushy a:hover{
+.pushy a:hover {
     background: #00b4ff;
     color: #FFF;
 }
 
 /* Menu Movement */
 
-.pushy-left{
+.pushy-left {
     -webkit-transform: translate3d(-200px,0,0);
     -moz-transform: translate3d(-200px,0,0);
     -ms-transform: translate3d(-200px,0,0);
@@ -45,7 +45,7 @@
     transform: translate3d(-200px,0,0);
 }
 
-.pushy-open{
+.pushy-open {
     -webkit-transform: translate3d(0,0,0);
     -moz-transform: translate3d(0,0,0);
     -ms-transform: translate3d(0,0,0);
@@ -53,7 +53,7 @@
     transform: translate3d(0,0,0);
 }
 
-.container-push, .push-push{
+.container-push, .push-push {
     -webkit-transform: translate3d(200px,0,0);
     -moz-transform: translate3d(200px,0,0);
     -ms-transform: translate3d(200px,0,0);
@@ -63,7 +63,7 @@
 
 /* Menu Transitions */
 
-.pushy, #container, .push{
+.pushy, #container, .push {
     -webkit-transition: -webkit-transform .2s cubic-bezier(.16, .68, .43, .99);
     -moz-transition: -moz-transform .2s cubic-bezier(.16, .68, .43, .99);
     -o-transition: -o-transform .2s cubic-bezier(.16, .68, .43, .99);
@@ -75,11 +75,11 @@
 
 /* Site Overlay */
 
-.site-overlay{
+.site-overlay {
     display: none;
 }
 
-.pushy-active .site-overlay{
+.pushy-active .site-overlay {
     display: block;
     position: fixed;
     top: 0;
@@ -91,7 +91,7 @@
 
 /* Example Media Query */
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .pushy{
         font-size: 1.0em;
     }
