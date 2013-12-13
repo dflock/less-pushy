@@ -1,7 +1,14 @@
-/*! Pushy - v0.9.1 - 2013-9-16
-* Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+/**
+*
+* ! Less-Pushy - v0.1 - 2013-12-13
+* Less-Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+* by Duncan Lock:
+* https://github.com/dflock/less-pushy
+*
+* Based on Pushy by Christopher Yee:
 * https://github.com/christophery/pushy/
-* by Christopher Yee */
+*
+**/
 
 $(function() {
 	var pushy = $('.pushy'), //menu css class
@@ -17,37 +24,37 @@ $(function() {
 		menuSpeed = 200, //jQuery fallback menu speed
 		menuWidth = pushy.width() + "px"; //jQuery fallback menu width
 
-	function togglePushy(){
+	function togglePushy() {
 		body.toggleClass(pushyActiveClass); //toggle site overlay
 		pushy.toggleClass(pushyClass);
 		container.toggleClass(containerClass);
 		push.toggleClass(pushClass); //css class to add pushy capability
 	}
 
-	function openPushyFallback(){
+	function openPushyFallback() {
 		body.addClass(pushyActiveClass);
 		pushy.animate({left: "0px"}, menuSpeed);
 		container.animate({left: menuWidth}, menuSpeed);
 		push.animate({left: menuWidth}, menuSpeed); //css class to add pushy capability
 	}
 
-	function closePushyFallback(){
+	function closePushyFallback() {
 		body.removeClass(pushyActiveClass);
 		pushy.animate({left: "-" + menuWidth}, menuSpeed);
 		container.animate({left: "0px"}, menuSpeed);
 		push.animate({left: "0px"}, menuSpeed); //css class to add pushy capability
 	}
 
-	if(Modernizr.csstransforms3d){
+	if(Modernizr.csstransforms3d) {
 		//toggle menu
 		menuBtn.click(function() {
 			togglePushy();
 		});
 		//close menu when clicking site overlay
-		siteOverlay.click(function(){ 
+		siteOverlay.click(function() {
 			togglePushy();
 		});
-	}else{
+	} else {
 		//jQuery fallback
 		pushy.css({left: "-" + menuWidth}); //hide menu by default
 		container.css({"overflow-x": "hidden"}); //fixes IE scrollbar issue
@@ -67,7 +74,7 @@ $(function() {
 		});
 
 		//close menu when clicking site overlay
-		siteOverlay.click(function(){ 
+		siteOverlay.click(function() {
 			if (state) {
 				openPushyFallback();
 				state = false;
