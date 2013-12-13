@@ -1,5 +1,19 @@
 @import "mixins.less";
 
+@slate-grey: #333332;
+@light-grey: #b3b3b1;
+@sky-blue: #00b4ff;
+
+@menu-btn-text: #fff;
+@menu-btn-background: @slate-grey;
+@menu-btn-highlight: @sky-blue;
+@menu-btn-highlight-text: #fff;
+
+@menu-text: @light-grey;
+@menu-background: @slate-grey;
+@menu-highlight: @sky-blue;
+@menu-highlight-text: #fff;
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -17,35 +31,13 @@ body {
     line-height: 1.4em;
 }
 
-/* Links */
-
-a {
-    color: #00b4ff;
-    text-decoration: none;
-
-    &:hover {
-        color: #000;
-    }
-}
-
 /* Site Header */
 header {
-    color: #fff;
-    background-color: #000;
+    color: @menu-text;
+    background-color: @menu-background;
     width: 100%;
     height: 30px;
     padding: 0.2em 0.5em;
-}
-
-/* Headings*/
-
-h1 {
-    font-size: 2.4em;
-}
-
-h2 {
-    border-bottom: 1px solid #D9D9D9;
-    padding: 0 0 5px 0;
 }
 
 /* Lists */
@@ -68,14 +60,14 @@ nav ul {
     width: 100px;
     padding: 10px;
     margin-bottom: 30px;
-    background: #000;
-    color: #FFF;
+    background: @menu-btn-background;
+    color: @menu-btn-text;
     text-align: center;
     cursor: pointer;
 
     &:hover {
-        background: #00b4ff;
-        color: #FFF;
+        background: @menu-btn-highlight;
+        color: @menu-btn-highlight-text;
     }
 }
 
@@ -85,28 +77,21 @@ nav ul {
 
 .pushy {
     width: @menu-open-width;
-    background: #333332;
+    background: @menu-background;
     font-size: 0.9em;
     font-weight: bold;
     .box-shadow(inset -10px 0 6px -9px rgba(0, 0, 0, .7));
 
     a {
-        color: #b3b3b1;
+        color: @menu-text;
         padding: 15px 30px;
         border-bottom: 1px solid rgba(0, 0, 0, .1);
         border-top: 1px solid rgba(255, 255, 255, .1);
         text-decoration: none;
 
         &:hover {
-            background: #00b4ff;
-            color: #fff;
+            background: @menu-highlight;
+            color: @menu-highlight-text;
         }
     }
-}
-
-/* Footer */
-
-footer {
-    font-size: 0.9em;
-    text-align: center;
 }
