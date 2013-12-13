@@ -14,7 +14,7 @@ $(function() {
 	var pushy = $('.pushy'), //menu css class
 		body = $('body'),
 		container = $('#container'), //container css class
-		push = $('.push'), //css class to add pushy capability
+		push = $('.push'), //css class to add pushy capability to elements outside the container
 		siteOverlay = $('.site-overlay'), //site overlay
 		pushyClass = "pushy-left pushy-open", //menu position & menu open class
 		pushyActiveClass = "pushy-active", //css class to toggle site overlay
