@@ -14,9 +14,15 @@
 
 /* Menu Appearance */
 
+// The width of the part of the menu shown when it's closed
+// Set to 0 to hide completely when closed,
+// set to 10px to leave 10px showing.
 @menu-closed-width: 10px;
+// The width of the menu when it's open
 @menu-open-width: 200px;
+// The z-index of the menu and the overlay
 @z-index: 9999;
+// The speed of the transition
 @speed: .2s;
 
 .pushy {
@@ -34,18 +40,27 @@
     }
 }
 
+#container,
+.push {
+    // Starts by pushing the container over to make room for any menu-closed-width
+    .transform(translate3d(@menu-closed-width,0,0));
+}
 
 /* Menu Movement */
 
 .pushy-left {
-    .transform(translate3d(@menu-open-width*(-1px),0,0));
+    // Starts off-canvas, left = minus it's width
+    .transform(translate3d(@menu-open-width * (-1px) + @menu-closed-width,0,0));
 }
 
 .pushy-open {
+    // Move on-canvas, left = 0
     .transform(translate3d(0,0,0));
 }
 
-.container-push, .push-push {
+#container.container-push,
+.push-push {
+    // Shove the container over to make room
     .transform(translate3d(@menu-open-width,0,0));
 }
 

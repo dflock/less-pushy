@@ -45,21 +45,22 @@ $(function() {
 		push.animate({left: "0px"}, menuSpeed); //css class to add pushy capability
 	}
 
+
 	if(Modernizr.csstransforms3d) {
-		//toggle menu
+		// toggle menu
 		menuBtn.click(function() {
 			togglePushy();
 		});
-		//close menu when clicking site overlay
+		// close menu when clicking site overlay
 		siteOverlay.click(function() {
 			togglePushy();
 		});
 	} else {
-		//jQuery fallback
+		// jQuery fallback
 		pushy.css({left: "-" + menuWidth}); //hide menu by default
 		container.css({"overflow-x": "hidden"}); //fixes IE scrollbar issue
 
-		//keep track of menu state (open/close)
+		// keep track of menu state (open/close)
 		var state = true;
 
 		//toggle menu
@@ -83,5 +84,8 @@ $(function() {
 				state = true;
 			}
 		});
+	}
+
+
 	}
 });

@@ -49,6 +49,12 @@ nav ul {
   color: #ffffff;
 }
 /* Menu Styles */
+.sidebar {
+  color: #b3b3b1;
+}
+.sidebar h4 {
+  padding: 0.2em 1em;
+}
 .pushy {
   width: 200px;
   background: #333332;
