@@ -1,13 +1,14 @@
-#Pushy
+#Less-Pushy
 
-Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+Less-Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
 
-Feel free to [let me know](http://www.twitter.com/cmyee) if you use Pushy in one of your websites.
+It's an updated version of Pushy, converted to use LESS and separate out some of the presentation styles.
 
-[View Demo](http://www.christopheryee.ca/pushy)
+To see the original Pushy in action, [see the Demo](http://www.christopheryee.ca/pushy).
 
 ##Features
 
+- All styling defined in [LESS](http://lesscss.org/)
 - Uses CSS transforms & transitions.
 - Smooth performance on mobile devices.
 - jQuery animation fallback for IE 7 - 9.
@@ -24,13 +25,13 @@ Feel free to [let me know](http://www.twitter.com/cmyee) if you use Pushy in one
 
 1. Include jQuery & Modernizr.
 
-2. Add the stylesheet (pushy.css) in your head and the JS (pushy.min.js) file in your footer.
+2. Add the stylesheet (pushy.css or pushy.min.css) in your head and the JS (pushy.j or pushy.min.js) file in your footer.
 
 3. Insert the following markup into your body.
 
 ```html
 <!-- Pushy Menu -->
-<nav class="pushy pushy-left">
+<nav class="sidebar pushy pushy-left">
     <ul>
         <li><a href="#">Item 1</a></li>
         <li><a href="#">Item 2</a></li>
@@ -74,23 +75,12 @@ html, body{
 }
 ```
 
-- If you change the width of the ```.pushy``` menu, be sure to update the values in the ```.pushy-left```and ```.container-push, .push-push``` CSS classes.
+- To change the width of the ```.pushy``` menu, just change the @menu-open-width value at the top of pushy.less:
 
-```css
+```less
 
-.pushy{
-    width: 400px; /* Changed the width to 400px */
-}
+@menu-open-width: 200px;
 
-.pushy-left{
-    transform: translate3d(-400px,0,0); /* Updated the values */
-    /* Don't forget the vendor prefixes */
-}
-
-.container-push, .push-push{
-    transform: translate3d(400px,0,0); /* Updated the values */
-    /* Don't forget the vendor prefixes */
-}
 ```
 
 ##Browser Compatibility
@@ -103,6 +93,21 @@ html, body{
 | Safari (Mac)  |
 
 ##Version History
+
+### Less-Pushy
+
+0.1
+
+- Converted all styles over to [LESS](http://lesscss.org/)
+- Turned all configurable magic numbers into variables.
+- Moved all presentational styles out of pushy.less, into demo.less.
+- Added ability to have part of the menu showing when closed.
+- Started version numbering over again on rename.
+- Moved demo.less colours into less variables.
+- Added site header to demo use of .push class.
+- Tidy and remove unnecessary styles and other stuff.
+
+### Pushy
 
 0.9.1
 
