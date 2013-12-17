@@ -12,10 +12,10 @@
 /* Menu Appearance */
 .pushy {
   position: fixed;
-  width: 200px;
-  height: 100%;
   top: 0;
   z-index: 9999;
+  width: 200px;
+  height: 100%;
   overflow: auto;
   /* enables momentum scrolling in iOS overflow elements */
   -webkit-overflow-scrolling: touch;
